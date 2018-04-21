@@ -383,6 +383,673 @@ Instructions<br>
 Create two new string variables: myFirstName and myLastName and assign them the values of your first and last name, respectively.	<br>	
 </p>
 <hr>
+<p>
+	<h2>Escaping Literal Quotes in Strings </h2>
+When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: " or ' inside of your string?<br>	
+
+In JavaScript, you can escape a quote from considering it as an end of string quote by placing a backslash (\) in front of the quote.<br>	
+
+var sampleStr = "Alan said, \"Peter is learning JavaScript\".";<br>	
+
+This signals to JavaScript that the following quote is not the end of the string, but should instead appear inside the string. So if you were to print this to the console, you would get:<br>	
+
+Alan said, "Peter is learning JavaScript".<br>	
+
+Instructions<br>	
+Use backslashes to assign a string to the myStr variable so that if you were to print it to the console, you would see:<br>	
+
+I am a "double quoted" string inside "double quotes".<br>	
+</p>
+<hr>
+<p>
+	<h2></h2>
+String values in JavaScript may be written with single or double quotes, so long as you start and end with the same type of quote. Unlike some languages, single and double quotes are functionally identical in JavaScript.<br>	
+
+"This string has \"double quotes\" in it"<br>	
+
+The value in using one or the other has to do with the need to escape quotes of the same type. Unless they are escaped, you cannot have more than one pair of whichever quote type begins a string.<br>	
+
+If you have a string with many double quotes, this can be difficult to read and write. Instead, use single quotes:<br>	
+
+'This string has "double quotes" in it. And "probably" lots of them.'<br>	
+
+Instructions<br>	
+Change the provided string from double to single quotes and remove the escaping.<br>	
+</p>
+<hr>
+<p>
+<h2>Escape Sequences in Strings </h2>
+Quotes are not the only characters that can be escaped inside a string. Here is a table of common escape sequences:<br>	
+
+Code	Output<br>	
+\'	single quote<br>	
+\"	double quote<br>	
+\\	backslash<br>	
+\n	newline<br>	
+\r	carriage return<br>	
+\t	tab<br>	
+\b	backspace<br>	
+\f	form feed<br>	
+Note that the backslash itself must be escaped in order to display as a backslash.<br>	
+
+Instructions<br>	
+Assign the following three lines of text into the single variable myStr using escape sequences.<br>	
+
+FirstLine<br>	
+\SecondLine\<br>	
+ThirdLine<br>	
+You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.<br>	
+
+Here is the text with the escape sequences written out.<br>	
+
+FirstLinenewlinebackslashSecondLinebackslashcarriage-returnThirdLine	<br>	
+</p>
+<hr>
+<p>
+<h2>Concatenating Strings with Plus Operator </h2>
+In JavaScript, when the + operator is used with a String value, it is called the concatenation operator. You can build a new string out of other strings by concatenating them together.<br>	
+
+Example<br>	
+
+<pre>'My name is Alan,' + ' I concatenate.'<br>	</pre>
+Note<br>	
+Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.<br>	
+
+Instructions<br>	
+Build myStr from the strings "This is the start. " and "This is the end." using the + operator.	<br>	
+</p>
+<hr>
+<p>
+<h2>Concatenating Strings with the Plus Equals Operator </h2>
+We can also use the += operator to concatenate a string onto the end of an existing string variable. This can be very helpful to break a long string over several lines.<br>	
+
+Note<br>	
+Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.<br>	
+
+Instructions<br>	
+Build myStr over several lines by concatenating these two strings:<br>	
+"This is the first sentence. " and "This is the second sentence." using the += operator.	<br>	
+</p>
+<hr>
+<p>
+	<h2>Constructing Strings with Variables </h2>
+Sometimes you will need to build a string, Mad Libs style. By using the concatenation operator (+), you can insert one or more variables into a string you're building.<br>	
+
+Instructions<br>	
+Set myName to a string equal to your name and build myStr with myName between the strings "My name is " and " and I am swell!"<br>	
+</p>
+<hr>
+<p>
+	<h2>Appending Variables to Strings </h2>
+Just as we can build a string over multiple lines out of string literals, we can also append variables to a string using the plus equals (+=) operator.<br>	
+
+Instructions<br>	
+Set someAdjective and append it to myStr using the += operator.<br>	
+</p>
+<hr>
+<p>
+	<h2>Find the Length of a String </h2>
+You can find the length of a String value by writing .length after the string variable or string literal.<br>	
+
+"Alan Peter".length; // 10<br>	
+
+For example, if we created a variable var firstName = "Charles", we could find out how long the string "Charles" is by using the firstName.length property.<br>	
+
+Instructions<br>	
+Use the .length property to count the number of characters in the lastName variable and assign it to lastNameLength.<br>	
+</p>
+<hr>
+<p>
+	<h2>Use Bracket Notation to Find the First Character in a String </h2>
+Bracket notation is a way to get a character at a specific index within a string.<br>	
+
+Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as Zero-based indexing.<br>	
+
+For example, the character at index 0 in the word "Charles" is "C". So if var firstName = "Charles", you can get the value of the first letter of the string by using firstName[0].<br>	
+
+Instructions<br>	
+Use bracket notation to find the first character in the lastName variable and assign it to firstLetterOfLastName.<br>	
+
+Hint<br>	
+Try looking at the firstLetterOfFirstName variable declaration if you get stuck.<br>	
+</p>
+<hr>
+<p>
+	<h2>Understand String Immutability </h2>
+In JavaScript, String values are immutable, which means that they cannot be altered once created.<br>	
+
+For example, the following code:<br>	
+
+<pre>
+	var myStr = "Bob";<br>	
+myStr[0] = "J";<br>	
+</pre>
+cannot change the value of myStr to "Job", because the contents of myStr cannot be altered. Note that this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed. The only way to change myStr would be to assign it with a new string, like this:<br>	
+
+<pre>
+	var myStr = "Bob";<br>	
+myStr = "Job";<br>	
+</pre>
+Instructions<br>	
+Correct the assignment to myStr to achieve the desired effect.<br>	
+</p>
+<hr>
+<p>
+	<h2>Use Bracket Notation to Find the Nth Character in a String </h2>
+You can also use bracket notation to get the character at other positions within a string.<br>	
+
+Remember that computers start counting at 0, so the first character is actually the zeroth character.<br>	
+
+Instructions<br>	
+Let's try to set thirdLetterOfLastName to equal the third letter of the lastName variable using bracket notation.<br>	
+
+Hint<br>	
+Try looking at the secondLetterOfFirstName variable declaration if you get stuck.<br>	
+</p>
+<hr>
+<p>
+<h2>Use Bracket Notation to Find the Last Character in a String </h2>
+In order to get the last letter of a string, you can subtract one from the string's length.<br>	
+
+For example, if var firstName = "Charles", you can get the value of the last letter of the string by using firstName[firstName.length - 1].<br>	
+
+Instructions<br>	
+Use bracket notation to find the last character in the lastName variable.<br>	
+
+Hint<br>	
+Try looking at the lastLetterOfFirstName variable declaration if you get stuck.	<br>	
+</p>
+<hr>
+<p>
+<h2>Use Bracket Notation to Find the NthtoLast Character in a String </h2>
+You can use the same principle we just used to retrieve the last character in a string to retrieve the Nth-to-last character.<br>	
+
+For example, you can get the value of the third-to-last letter of the var firstName = "Charles" string by using firstName[firstName.length - 3]<br>	
+
+Instructions<br>	
+Use bracket notation to find the second-to-last character in the lastName string.<br>	
+
+Hint<br>	
+Try looking at the thirdToLastLetterOfFirstName variable declaration if you get stuck.	<br>	
+</p>
+<hr>
+<p>
+	<h2>Word Blanks </h2>
+We will now use our knowledge of strings to build a "Mad Libs" style word game we're calling "Word Blanks". You will create an (optionally humorous) "Fill in the Blanks" style sentence.<br>	
+
+In a "Mad Libs" game, you are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.<br>	
+
+Consider this sentence - "It was really ____, and we ____ ourselves ____". This sentence has three missing pieces- an adjective, a verb and an adverb, and we can add words of our choice to complete it. We can then assign the completed sentence to a variable as follows:<br>	
+
+var sentence = "It was really" + "hot" + ", and we" + "laughed" + "ourselves" + "silly.";
+In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.<br>	
+
+You will need to use the string concatenation operator + to build a new string, using the provided variables: myNoun, myAdjective, myVerb, and myAdverb. You will then assign the formed string to the result variable.<br>	
+
+You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.<br>	
+</p>
+<hr>
+<p>
+	<h2>Store Multiple Values in one Variable using JavaScript Arrays </h2>
+With JavaScript array variables, we can store several pieces of data in one place.<br>	
+
+You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:<br>	
+
+var sandwich = ["peanut butter", "jelly", "bread"].<br>	
+
+Instructions<br>	
+Modify the new array myArray so that it contains both a string and a number (in that order).<br>	
+
+Hint<br>	
+Refer to the example code in the text editor if you get stuck.<br>	
+</p>
+<hr>
+<p>
+	<h2>Nest one Array within Another Array </h2>
+You can also nest arrays within other arrays, like this: [["Bulls", 23], ["White Sox", 45]]. This is also called a Multi-dimensional Array.<br>	
+
+Instructions<br>	
+Create a nested array called myArray.<br>	
+</p>
+<hr>
+<p>
+	<h2>Access Array Data with Indexes </h2>
+We can access the data inside arrays using indexes.<br>	
+
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use zero-based indexing, so the first element in an array is element 0.<br>	
+
+Example<br>	
+
+<pre>
+	var array = [1,2,3];<br>	
+array[0]; // equals 1<br>	
+var data = array[1];  // equals 2<br>	
+</pre>
+Instructions<br>	
+Create a variable called myData and set it to equal the first value of myArray using bracket notation.<br>	
+</p>
+<hr>
+<p>
+	<h2>Modify Array Data With Indexes </h2>
+Unlike strings, the entries of arrays are mutable and can be changed freely.<br>	
+
+Example<br>	
+
+<pre>
+	var ourArray = [3,2,1];<br>	
+ourArray[0] = 1; // equals [1,2,1]<br>	
+</pre>
+Instructions<br>	
+Modify the data stored at index 0 of myArray to a value of 3.<br>	
+</p>
+<hr>
+<p>
+	<h2>Access MultiDimensional Arrays With Indexes </h2>
+One way to think of a multi-dimensional array, is as an array of arrays. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.<br>	
+
+Example<br>	
+
+<pre>
+var arr = [<br>	
+    [1,2,3],<br>	
+    [4,5,6],<br>	
+    [7,8,9],<br>	
+    [[10,11,12], 13, 14]<br>	
+];<br>	
+arr[3]; // equals [[10,11,12], 13, 14]<br>	
+arr[3][0]; // equals [10,11,12]<br>	
+arr[3][0][1]; // equals 11<br>		
+</pre>
+Instructions<br>	
+Using bracket notation select an element from myArray such that myData is equal to 8.<br>	
+</p>
+<hr>
+<p>
+<h2>Manipulate Arrays With push </h2>
+An easy way to append data to the end of an array is via the push() function.<br>	
+
+.push() takes one or more parameters and "pushes" them onto the end of the array.<br>	
+
+<pre>
+var arr = [1,2,3];<br>	
+arr.push(4);<br>	
+// arr is now [1,2,3,4]<br>		
+</pre>
+Instructions<br>	
+Push ["dog", 3] onto the end of the myArray variable.	<br>	
+</p>
+<hr>
+<p>
+	<h2>Manipulate Arrays With pop </h2>
+Another way to change the data in an array is with the .pop() function.<br>	
+
+.pop() is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable.<br>	
+
+Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.<br>	
+
+For example, for the code<br>	
+var oneDown = [1, 4, 6].pop();<br>	
+the variable oneDown now holds the value 6 and the array becomes [1, 4].<br>	
+
+Instructions<br>	
+Use the .pop() function to remove the last item from myArray, assigning the "popped off" value to removedFromMyArray.<br>	
+</p>
+<hr>
+<p>
+	<h2>Manipulate Arrays With shift </h2>
+pop() always removes the last element of an array. What if you want to remove the first?<br>	
+
+That's where .shift() comes in. It works just like .pop(), except it removes the first element instead of the last.<br>	
+
+Instructions<br>	
+Use the .shift() function to remove the first item from myArray, assigning the "shifted off" value to removedFromMyArray.<br>	
+</p>
+<hr>
+<p>
+<h2>Manipulate Arrays With unshift </h2>
+Not only can you shift elements off of the beginning of an array, you can also unshift elements to the beginning of an array i.e. add elements in front of the array.<br>	
+
+.unshift() works exactly like .push(), but instead of adding the element at the end of the array, unshift() adds the element at the beginning of the array.<br>	
+
+Instructions<br>	
+Add ["Paul",35] to the beginning of the myArray variable using unshift().	<br>	
+</p>
+<hr>
+<p>
+	<h2>Shopping List </h2>
+Create a shopping list in the variable myList. The list should be a multi-dimensional array containing several sub-arrays.<br>	
+
+The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.<br>	
+
+["Chocolate Bar", 15]<br>	
+
+There should be at least 5 sub-arrays in the list.<br>	
+</p>
+<hr>
+<p>
+	<h2>Write Reusable JavaScript with Functions </h2>
+In JavaScript, we can divide up our code into reusable parts called functions.<br>	
+
+Here's an example of a function:<br>	
+
+<pre>
+	function functionName() {<br>	
+  console.log("Hello World");<br>	
+}<br>	
+</pre>
+You can call or invoke this function by using its name followed by parentheses, like this:<br>	
+
+functionName();
+<br>	
+Each time the function is called it will print out the message "Hello World" on the dev console. All of the code between the curly braces will be executed every time the function is called.<br>	
+
+Instructions<br>	
+Create a function called reusableFunction which prints "Hi World" to the dev console.<br>	
+Call the function.<br>	
+</p>
+<hr>
+<p>
+	<h2>Passing Values to Functions with Arguments </h2>
+Parameters are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or "passed") into a function when it is called are known as arguments.<br>	
+
+Here is a function with two parameters, param1 and param2:<br>	
+
+<pre>
+	function testFun(param1, param2) {<br>	
+  console.log(param1, param2);<br>	
+}<br>	
+</pre>
+Then we can call testFun:<br>	
+
+testFun("Hello", "World");<br>	
+
+We have passed two arguments, "Hello" and "World". Inside the function, param1 will equal "Hello" and param2 will equal "World". Note that you could call testFun again with different arguments and the parameters would take on the value of the new arguments.<br>	
+
+Instructions<br>	
+Create a function called functionWithArgs that accepts two arguments and outputs their sum to the dev console.<br>	
+Call the function.<br>	
+</p>
+<hr>
+<p>
+	<h2>Global Scope and Functions </h2>
+In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.<br>	
+
+Variables which are used without the var keyword are automatically created in the global scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with var.<br>	
+
+Instructions<br>	
+Using var, declare a global variable myGlobal outside of any function. Initialize it with a value of 10.<br>	
+
+Inside function fun1, assign 5 to oopsGlobal without using the var keyword.<br>	
+</p>
+<hr>
+<p>
+	<h2>Local Scope and Functions </h2>
+Variables which are declared within a function, as well as the function parameters have local scope. That means, they are only visible within that function.<br>	
+
+Here is a function myTest with a local variable called loc.<br>	
+
+<pre>
+function myTest() {<br>	
+  var loc = "foo";<br>	
+  console.log(loc);<br>	
+}<br>	
+myTest(); // "foo"<br>	
+console.log(loc); // "undefined"<br>		
+</pre>
+loc is not defined outside of the function.<br>	
+
+Instructions<br>	
+Declare a local variable myVar inside myLocalScope. Run the tests and then follow the instructions commented out in the editor.<br>	
+
+Hint<br>	
+Refreshing the page may help if you get stuck.<br>	
+</p>
+<hr>
+<p>
+	<h2>Global vs Local Scope in Functions </h2>
+It is possible to have both local and global variables with the same name. When you do this, the local variable takes precedence over the global variable.<br>	
+
+In this example:<br>	
+
+<pre>
+var someVar = "Hat";<br>	
+function myFun() {<br>	
+  var someVar = "Head";<br>	
+  return someVar;<br>	
+}<br>		
+</pre>
+The function myFun will return "Head" because the local version of the variable is present.<br>	
+
+Instructions<br>	
+Add a local variable to myOutfit to override the value of outerWear with "sweater".<br>	
+</p>
+<hr>
+<p>
+<h2>Return a Value from a Function with Return </h2>
+We can pass values into a function with arguments. You can use a return statement to send a value back out of a function.<br>	
+
+Example<br>	
+
+<pre>
+function plusThree(num) {<br>	
+  return num + 3;<br>	
+}<br>	
+var answer = plusThree(5); // 8<br>		
+</pre>
+plusThree takes an argument for num and returns a value equal to num + 3.<br>	
+
+Instructions<br>	
+Create a function timesFive that accepts one argument, multiplies it by 5, and returns the new value.	<br>	
+</p>
+<hr>
+<p>
+<h2>Assignment with a Returned Value </h2>
+If you'll recall from our discussion of Storing Values with the Assignment Operator, everything to the right of the equal sign is resolved before the value is assigned. This means we can take the return value of a function and assign it to a variable.<br>	
+
+Assume we have pre-defined a function sum which adds two numbers together, then:<br>	
+
+ourSum = sum(5, 12);<br>	
+
+will call sum function, which returns a value of 17 and assigns it to ourSum variable.<br>	
+
+Instructions<br>	
+Call the processArg function with an argument of 7 and assign its return value to the variable processed.	<br>	
+</p>
+<hr>
+<p>
+	<h2>Stand in Line </h2>
+In Computer Science a queue is an abstract Data Structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.<br>	
+
+Write a function nextInLine which takes an array (arr) and a number (item) as arguments. Add the number to the end of the array, then remove the first element of array. The nextInLine function should then return the element that was removed.<br>	
+</p>
+<hr>
+<p>
+<h2>Understanding Boolean Values </h2>
+Another data type is the Boolean. Booleans may only be one of two values: true or false. They are basically little on-off switches, where true is "on" and false is "off." These two states are mutually exclusive.<br>	
+
+Note<br>	
+Boolean values are never written with quotes. The strings "true" and "false" are not Boolean and have no special meaning in JavaScript.<br>	
+
+Instructions<br>	
+Modify the welcomeToBooleans function so that it returns true instead of false when the run button is clicked.<br>		
+</p>
+<hr>
+<p>
+	<h2>Use Conditional Logic with If Statements </h2>
+If statements are used to make decisions in code. The keyword if tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as Boolean conditions because they may only be true or false.<br>		
+
+When the condition evaluates to true, the program executes the statement inside the curly braces. When the Boolean condition evaluates to false, the statement inside the curly braces will not execute.<br>		
+
+Pseudocode<br>		
+
+<pre>
+if (condition is true) {<br>		
+statement is executed<br>		
+}<br>		
+</pre>
+Example<br>		
+
+<pre>
+function test (myCondition) {<br>		
+  if (myCondition) {<br>		
+     return "It was true";<br>		
+  }<br>		
+  return "It was false";<br>		
+}<br>		
+test(true);  // returns "It was true"<br>		
+test(false); // returns "It was false"<br>			
+</pre>
+When test is called with a value of true, the if statement evaluates myCondition to see if it is true or not. Since it is true, the function returns "It was true". When we call test with a value of false, myCondition is not true and the statement in the curly braces is not executed and the function returns "It was false".<br>		
+
+Instructions<br>		
+Create an if statement inside the function to return "Yes, that was true" if the parameter wasThatTrue is true and return "No, that was false" otherwise.<br>		
+</p>
+<hr>
+<p>
+<h2>Comparison with the Equality Operator </h2>
+There are many Comparison Operators in JavaScript. All of these operators return a boolean true or false value.<br>			
+
+The most basic operator is the equality operator ==. The equality operator compares two values and returns true if they're equivalent or false if they are not. Note that equality is different from assignment (=), which assigns the value at the right of the operator to a variable in the left.<br>			
+
+<pre>
+function equalityTest(myVal) {
+  if (myVal == 10) {
+     return "Equal";
+  }
+  return "Not Equal";
+}	
+</pre>
+If myVal is equal to 10, the equality operator returns true, so the code in the curly braces will execute, and the function will return "Equal". Otherwise, the function will return "Not Equal".<br>			
+
+In order for JavaScript to compare two different data types (for example, numbers and strings), it must convert one type to another. Once it does, however, it can compare terms as follows:<br>			
+
+<pre>
+   1   ==  1    // true
+   1   ==  2    // false
+   1   == '1'   // true
+  "3"  ==  3    // true	
+</pre>
+Instructions<br>			
+Add the equality operator to the indicated line so that the function will return "Equal" when val is equivalent to 12	<br>			
+</p>
+<hr>
+<p>
+	<h2>Comparison with the Strict Equality Operator </h2>
+Strict equality (===) is the counterpart to the equality operator (==). Unlike the equality operator, strict equality tests both the data type and value of the compared elements.<br>			
+
+Examples<br>			
+
+<pre>
+3 === 3   // true
+3 === '3' // false	
+</pre>
+In the second example, 3 is a Number type and '3' is a String type.<br>			
+
+Instructions<br>			
+Use the strict equality operator in the if statement so the function will return "Equal" when val is strictly equal to 7<br>			
+</p>
+<hr>
+<p>
+<h2>Comparison with the Inequality Operator </h2>
+The inequality operator (!=) is the opposite of the equality operator. It means "Not Equal" and returns false where equality would return true and vice versa. Like the equality operator, the inequality operator will convert data types of values while comparing.<br>			
+
+Examples<br>			
+
+<pre>
+1 != 2      // true
+1 != "1"    // false
+1 != '1'    // false
+1 != true   // false
+0 != false  // false	
+</pre>
+Instructions<br>			
+Add the inequality operator != in the if statement so that the function will return "Not Equal" when val is not equivalent to 99	<br>			
+</p>
+<hr>
+<p>
+<h2>Comparison with the Strict Inequality Operator </h2>
+The strict inequality operator (!==) is the opposite of the strict equality operator. It means "Strictly Not Equal" and returns false where strict equality would return true and vice versa. Strict inequality will not convert data types.<br>			
+
+Examples<br>			
+
+<pre>
+3 !== 3   // false
+3 !== '3' // true
+4 !== 3   // true	
+</pre>
+Instructions<br>			
+Add the strict inequality operator to the if statement so the function will return "Not Equal" when val is not strictly equal to 17	<br>			
+</p>
+<hr>
+<p>
+<h2>Comparison with the Greater Than Operator </h2>
+The greater than operator (>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns true. Otherwise, it returns false.<br>			
+
+Like the equality operator, greater than operator will convert data types of values while comparing.<br>			
+
+Examples<br>			
+
+<pre>
+ 5 > 3   // true
+ 7 > '3' // true
+ 2 > 3   // false
+'1' > 9  // false	
+</pre>
+Instructions<br>			
+Add the greater than operator to the indicated lines so that the return statements make sense.	<br>			
+</p>
+<hr>
+<p>
+<h2>Comparison with the Greater Than Or Equal To Operator </h2>
+The greater than or equal to operator (>=) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns true. Otherwise, it returns false.<br>			
+
+Like the equality operator, greater than or equal to operator will convert data types while comparing.<br>			
+
+Examples<br>			
+
+<pre>
+ 6  >=  6  // true
+ 7  >= '3' // true
+ 2  >=  3  // false
+'7' >=  9  // false	
+</pre>
+Instructions<br>			
+Add the greater than or equal to operator to the indicated lines so that the return statements make sense.	<br>			
+</p>
+<hr>
+<p>
+<h2>Comparison with the Less Than Operator </h2>
+The less than operator (<) compares the values of two numbers. If the number to the left is less than the number to the right, it returns true. Otherwise, it returns false. Like the equality operator, less than operator converts data types while comparing.<br>			
+
+Examples<br>			
+
+<pre>
+  2 < 5  // true
+'3' < 7  // true
+  5 < 5  // false
+  3 < 2  // false
+'8' < 4  // false	
+</pre>
+Instructions<br>			
+Add the less than operator to the indicated lines so that the return statements make sense.	<br>			
+</p>
+<hr>
+<p>
+<h2>Comparison with the Less Than Or Equal To Operator </h2>
+The less than or equal to operator (<=) compares the values of two numbers. If the number to the left is less than or equal the number to the right, it returns true. If the number on the left is greater than the number on the right, it returns false. Like the equality operator, less than or equal to converts data types.<br>			
+
+Examples<br>			
+
+<pre>
+  4 <= 5  // true
+'7' <= 7  // true
+  5 <= 5  // true
+  3 <= 2  // false
+'8' <= 4  // false	
+</pre>
+Instructions<br>			
+Add the less than or equal to operator to the indicated lines so that the return statements make sense.	<br>			
+</p>
 	</div>
 </body>
 </html>
