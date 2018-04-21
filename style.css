@@ -1,0 +1,10 @@
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+pre {
+	background: #eee;
+	padding: 30px;
+	overflow: scroll;
+}

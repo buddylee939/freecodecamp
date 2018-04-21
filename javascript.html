@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="javascript.html">Javascript</a></li>
+			</ul>
+		</nav>			
+		<h1>Javascript</h1>
+		<p>
+<h2>Comment your JavaScript Code <br></h2>
+Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.<br>
+
+There are two ways to write comments in JavaScript:<br>
+
+Using // will tell JavaScript to ignore the remainder of the text on the current line:<br>
+
+<pre>
+	// This is an in-line comment.<br>
+</pre>
+You can make a multi-line comment beginning with /* and ending with */:<br>
+
+<pre>
+/* This is a <br>
+   multi-line comment */<br>	
+</pre>
+Best Practice<br>
+As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code—both for others and for your future self.<br>
+
+Instructions<br>
+Try creating one of each type of comment.			<br>
+		</p>
+		<hr>
+		<p>
+<h2>Declare JavaScript Variables <br></h2>
+In computer science, data is anything that is meaningful to the computer. JavaScript provides seven different data types which are undefined, null, boolean, string, symbol, number, and object.<br>
+
+For example, computers distinguish between numbers, such as the number 12, and strings, such as "12", "dog", or "123 cats", which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.<br>
+
+Variables allow computers to store and manipulate data in a dynamic fashion. They do this by using a "label" to point to the data rather than using the data itself. Any of the seven data types may be stored in a variable.<br>
+
+Variables are similar to the x and y variables you use in mathematics, which means they're a simple name to represent the data we want to refer to. Computer variables differ from mathematical variables in that they can store different values at different times.<br>
+
+We tell JavaScript to create or declare a variable by putting the keyword var in front of it, like so:<br>
+
+<pre>
+	var ourName;<br>
+</pre>
+creates a variable called ourName. In JavaScript we end statements with semicolons.<br>
+
+Variable names can be made up of numbers, letters, and $ or _, but may not contain spaces or start with a number. <br>
+
+Instructions<br>
+Use the var keyword to create a variable called myName.<br>
+
+Hint<br>
+Look at the ourName example if you get stuck.		<br>	
+		</p>
+		<hr>
+		<p>
+<h2>Storing Values with the Assignment Operator </h2>
+In JavaScript, you can store a value in a variable with the assignment operator.<br>	
+
+myVariable = 5;<br>	
+
+Assigns the Number value 5 to myVariable.<br>	
+
+Assignment always goes from right to left. Everything to the right of the = operator is resolved before the value is assigned to the variable to the left of the operator.<br>	
+
+<pre>
+myVar = 5;<br>	
+myNum = myVar;<br>		
+</pre>
+Assigns 5 to myVar and then resolves myVar to 5 again and assigns it to myNum.<br>	
+
+Instructions<br>	
+Assign the value 7 to variable a.<br>	
+
+Assign the contents of a to variable b.			<br>	
+		</p>
+		<hr>
+		<p>
+<h2>Initializing Variables with the Assignment Operator </h2>
+It is common to initialize a variable to an initial value in the same line as it is declared.<br>	
+
+<pre>var myVar = 0;<br>	</pre>
+
+Creates a new variable called myVar and assigns it an initial value of 0.<br>	
+
+Instructions<br>	
+Define a variable a with var and initialize it to a value of 9.			<br>	
+		</p>
+		<hr>
+		<p>
+<h2>Understanding Uninitialized Variables </h2>
+When JavaScript variables are declared, they have an initial value of undefined. If you do a mathematical operation on an undefined variable your result will be NaN which means "Not a Number". If you concatenate a string with an undefined variable, you will get a literal string of "undefined".<br>	
+
+Instructions<br>	
+Initialize the three variables a, b, and c with 5, 10, and "I am a" respectively so that they will not be undefined.			<br>	
+		</p>
+		<hr>
+<p>
+<h2>Understanding Case Sensitivity in Variables </h2>
+In JavaScript all variables and function names are case sensitive. This means that capitalization matters.<br>	
+
+MYVAR is not the same as MyVar nor myvar. It is possible to have multiple distinct variables with the same name but different casing. It is strongly recommended that for the sake of clarity, you do not use this language feature.<br>	
+
+Best Practice<br>	
+Write variable names in Javascript in camelCase. In camelCase, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.<br>	
+
+Examples:<br>	
+
+<pre>
+var someVariable;<br>	
+var anotherVariableName;<br>	
+var thisVariableNameIsTooLong;<br>		
+</pre>
+Instructions<br>	
+Modify the existing declarations and assignments so their names use camelCase.<br>	
+Do not create any new variables.	<br>	
+</p>		
+<hr>
+<p>
+<h2>Add Two Numbers with JavaScript </h2>
+Number is a data type in JavaScript which represents numeric data.<br>	
+
+Now let's try to add two numbers using JavaScript.<br>	
+
+JavaScript uses the + symbol as addition operation when placed between two numbers.<br>	
+
+Example<br>	
+
+<pre>
+	myVar = 5 + 10; // assigned 15<br>	
+</pre>
+Instructions<br>	
+Change the 0 so that sum will equal 20.	<br>	
+</p>
+<hr>
+<p>
+<h2>Subtract One Number from Another with JavaScript </h2>
+We can also subtract one number from another.<br>	
+
+JavaScript uses the - symbol for subtraction.<br>	
+
+Example<br>	
+
+<pre>myVar = 12 - 6; // assigned 6<br>	</pre>
+Instructions<br>	
+Change the 0 so the difference is 12.	<br>	
+</p>
+<hr>
+<p>
+<h2>Multiply Two Numbers with JavaScript </h2>
+We can also multiply one number by another.<br>	
+
+JavaScript uses the * symbol for multiplication of two numbers.<br>	
+
+Example<br>	
+
+<pre>myVar = 13 * 13; // assigned 169<br>	</pre>
+Instructions<br>	
+Change the 0 so that product will equal 80.	<br>	
+</p>
+	</div>
+</body>
+</html>
