@@ -3,20 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Javascript</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-	<div class="container">
-		<nav>
+	<div class="container group">
+		<nav id="top">
 			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="javascript.html">Javascript</a></li>
+				<li><a href="jquery.html">jQuery</a></li>
 			</ul>
 		</nav>			
-		<h1>Javascript</h1>
+		<h1>Javascript Free Code Camp</h1>		
+<div id="sidebar">
+	<h3>Menu</h3>
+	<div>
+		<ul id="sideMenu">
+
+		</ul>
+	</div>
+</div>
+<div id="mainContent">
 		<p>
-<h2>Comment your JavaScript Code <br></h2>
+<h2>Comment your JavaScript Code </h2>
 Comments are lines of code that JavaScript will intentionally ignore. Comments are a great way to leave notes to yourself and to other people who will later need to figure out what that code does.<br>
 
 There are two ways to write comments in JavaScript:<br>
@@ -40,7 +52,7 @@ Try creating one of each type of comment.			<br>
 		</p>
 		<hr>
 		<p>
-<h2>Declare JavaScript Variables <br></h2>
+<h2>Declare JavaScript Variables</h2>
 In computer science, data is anything that is meaningful to the computer. JavaScript provides seven different data types which are undefined, null, boolean, string, symbol, number, and object.<br>
 
 For example, computers distinguish between numbers, such as the number 12, and strings, such as "12", "dog", or "123 cats", which are collections of characters. Computers can perform mathematical operations on a number, but not on a string.<br>
@@ -185,7 +197,7 @@ Change the 0 so that the quotient is equal to 2.<br>
 </p>
 <hr>
 <p>
-	<h2>Increment a Number with JavaScript </h2>
+	<h2 id="h2-1">Increment a Number with JavaScript </h2>
 You can easily increment or add one to a variable with the ++ operator.<br>	
 
 i++;<br>	
@@ -1204,7 +1216,764 @@ num < 10 - return "Small"<br>
 num < 15 - return "Medium"<br>			
 num < 20 - return "Large"<br>			
 num >= 20 - return "Huge"	<br>			
+</p>	
+<hr>
+<p>
+<h2>Golf Code </h2>
+In the game of golf each hole has a par meaning the average number of strokes a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname.<br>			
+
+Your function will be passed par and strokes arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):<br>			
+
+Strokes	Return<br>			
+1	"Hole-in-one!"<br>			
+<= par - 2	"Eagle"<br>			
+par - 1	"Birdie"<br>			
+par	"Par"<br>			
+par + 1	"Bogey"<br>			
+par + 2	"Double Bogey"<br>			
+>= par + 3	"Go Home!"<br>			
+par and strokes will always be numeric and positive.<br>				
 </p>
+<hr>
+<p>
+<h2>Selecting from many options with Switch Statements </h2>
+If you have many options to choose from, use a switch statement. A switch statement tests a value and can have many case statements which defines various possible values. Statements are executed from the first matched case value until a break is encountered.<br>				
+
+Here is a pseudocode example:<br>				
+
+<pre>
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  case valueN:
+    statementN;
+    break;
+}	
+</pre>
+case values are tested with strict equality (===). The break tells JavaScript to stop executing statements. If the break is omitted, the next statement will be executed.<br>				
+
+Instructions<br>				
+Write a switch statement which tests val and sets answer for the following conditions:<br>				
+1 - "alpha"<br>				
+2 - "beta"<br>				
+3 - "gamma"<br>				
+4 - "delta"<br>				
+
+Here are some helpful links:<br>				
+
+Switch Statement	<br>				
+</p>
+<hr>
+<p>
+<h2>Adding a default option in Switch statements </h2>
+In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found. Think of it like the final else statement in an if/else chain.<br>				
+
+A default statement should be the last case.<br>				
+
+<pre>
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  default:
+    defaultStatement;
+}	
+</pre>
+Instructions<br>				
+Write a switch statement to set answer for the following conditions:<br>				
+"a" - "apple"<br>				
+"b" - "bird"<br>				
+"c" - "cat"<br>				
+default - "stuff"	<br>				
+</p>
+<hr>
+<p>
+<h2>Multiple Identical Options in Switch Statements </h2>
+If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:<br>				
+
+<pre>
+switch(val) {
+  case 1:
+  case 2:
+  case 3:
+    result = "1, 2, or 3";
+    break;
+  case 4:
+    result = "4 alone";
+}	
+</pre>
+Cases for 1, 2, and 3 will all produce the same result.<br>				
+
+Instructions<br>				
+Write a switch statement to set answer for the following ranges:<br>				
+1-3 - "Low"<br>				
+4-6 - "Mid"<br>				
+7-9 - "High"<br>				
+
+Note<br>				
+You will need to have a case statement for each number in the range.	<br>				
+</p>
+<hr>
+<p>
+<h2>Replacing If Else Chains with Switch </h2>
+If you have many options to choose from, a switch statement can be easier to write than many chained if/else if statements. The following:<br>				
+
+<pre>
+if (val === 1) {
+  answer = "a";
+} else if (val === 2) {
+  answer = "b";
+} else {
+  answer = "c";
+}	
+</pre>
+can be replaced with:<br>				
+
+<pre>
+switch (val) {
+  case 1:
+    answer = "a";
+    break;
+  case 2:
+    answer = "b";
+    break;
+  default:
+    answer = "c";
+}	
+</pre>
+Instructions<br>				
+Change the chained if/else if statements into a switch statement.	<br>				
+</p>
+<hr>
+<p>
+<h2>Returning Boolean Values from Functions </h2>
+You may recall from Comparison with the Equality Operator that all comparison operators return a boolean true or false value.<br>				
+
+A common anti-pattern is to use an if/else statement to do a comparison and then return true/false:
+<br>				
+<pre>
+function isEqual(a,b) {
+  if (a === b) {
+    return true;
+  } else {
+    return false;
+  }
+}	
+</pre>
+Since === returns true or false, we can return the result of the comparison:<br>				
+
+<pre>
+function isEqual(a,b) {
+  return a === b;
+}	
+</pre>
+Instructions<br>				
+Fix the function isLess to remove the if/else statements.	<br>				
+</p>
+<hr>
+<p>
+<h2>Return Early Pattern for Functions </h2>
+When a return statement is reached, the execution of the current function stops and control returns to the calling location.<br>				
+
+Example<br>				
+
+<pre>
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();	
+</pre>
+The above outputs "Hello" to the console, returns "World", but "byebye" is never output, because the function exits at the return statement.<br>				
+
+Instructions<br>				
+Modify the function abTest so that if a or b are less than 0 the function will immediately exit with a value of undefined.<br>				
+
+Hint<br>				
+Remember that undefined is a keyword, not a string.	<br>				
+</p>
+<hr>
+<p>
+<h2>Counting Cards </h2>
+In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called Card Counting.<br>				
+
+Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.<br>				
+
+Count Change	Cards<br>				
++1	2, 3, 4, 5, 6<br>				
+0	7, 8, 9<br>				
+-1	10, 'J', 'Q', 'K', 'A'<br>				
+You will write a card counting function. It will receive a card parameter and increment or decrement the global count variable according to the card's value (see table). The function will then return a string with the current count and the string "Bet" if the count is positive, or "Hold" if the count is zero or negative. The current count and the player's decision ("Bet" or "Hold") should be separated by a single space.<br>				
+<br>				
+Example Output<br>				
+"-3 Hold"<br>				
+"5 Bet"
+<br>				
+Hint<br>				
+Do NOT reset count to 0 when value is 7, 8, or 9.	<br>				
+</p>
+<hr>
+<p>
+<h2>Build JavaScript Objects </h2>
+You may have heard the term object before.<br>				
+
+Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.<br>				
+
+Here's a sample object:<br>				
+
+<pre>
+var cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]
+};	
+</pre>
+Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.<br>				
+
+Instructions<br>				
+Make an object that represents a dog called myDog which contains the properties "name" (a string), "legs", "tails" and "friends".<br>				
+
+You can set these object properties to whatever values you want, as long "name" is a string, "legs" and "tails" are numbers, and "friends" is an array.	<br>				
+</p>
+<hr>
+<p>
+<h2>Accessing Objects Properties with the Dot Operator </h2>
+There are two ways to access the properties of an object: the dot operator (.) and bracket notation ([]), similar to an array.<br>				
+
+The dot operator is what you use when you know the name of the property you're trying to access ahead of time.<br>				
+
+Here is a sample of using the dot operator (.) to read an object property:<br>				
+
+<pre>
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2	
+</pre>
+Instructions<br>				
+Read in the property values of testObj using dot notation. Set the variable hatValue equal to the object property hat and set the variable shirtValue equal to the object property shirt.	<br>				
+</p>
+<hr>
+<p>
+<h2>Accessing Objects Properties with Bracket Notation </h2>
+The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in it, you will need to use bracket notation.<br>				
+
+Here is a sample of using bracket notation to read an object property:<br>				
+
+var myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock"
+};
+myObj["Space Name"]; // Kirk
+myObj['More Space']; // Spock
+Note that property names with spaces in them must be in quotes (single or double).<br>				
+
+Instructions<br>				
+Read the values of the properties "an entree" and "the drink" of testObj using bracket notation and assign them to entreeValue and drinkValue respectively.<br>				
+</p>
+<hr>
+<p>
+<h2>Accessing Objects Properties with Variables </h2>
+Another use of bracket notation on objects is to use a variable to access a property. This can be very useful for iterating through lists of the object properties or for doing the lookup.<br>				
+
+Here is an example of using a variable to access a property:<br>				
+
+<pre>
+var someProp = "propName";
+var myObj = {
+  propName: "Some Value"
+}
+myObj[someProp]; // "Some Value"	
+</pre>
+Here is one more:<br>				
+
+<pre>
+var myDog = "Hunter";
+var dogs = {
+  Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"
+}
+var breed = dogs[myDog];
+console.log(breed);// "Doberman"	
+</pre>
+Note that we do not use quotes around the variable name when using it to access the property because we are using the value of the variable, not the name<br>				
+
+Instructions<br>				
+Use the playerNumber variable to lookup player 16 in testObj using bracket notation.	<br>				
+</p>
+<hr>
+<p>
+<h2>Updating Object Properties </h2>
+After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.<br>				
+
+For example, let's look at ourDog:<br>				
+
+<pre>
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};	
+</pre>
+Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property:<br>				
+
+ourDog.name = "Happy Camper"; or<br>				
+
+ourDog["name"] = "Happy Camper";<br>				
+
+Now when we evaluate ourDog.name, instead of getting "Camper", we'll get his new name, "Happy Camper".<br>				
+
+Instructions<br>				
+Update the myDog object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.	<br>				
+</p>
+<hr>
+<p>
+<h2>Add New Properties to a JavaScript Object </h2>
+You can add new properties to existing JavaScript objects the same way you would modify them.<br>				
+
+Here's how we would add a "bark" property to ourDog:<br>				
+
+ourDog.bark = "bow-wow";<br>				
+
+or<br>				
+
+ourDog["bark"] = "bow-wow";<br>				
+
+Now when we evaluate ourDog.bark, we'll get his bark, "bow-wow".<br>				
+
+Instructions<br>				
+Add a "bark" property to myDog and set it to a dog sound, such as "woof". You may use either dot or bracket notation.	
+</p>
+<hr>
+<p>
+<h2>Delete Properties from a JavaScript Object </h2>
+We can also delete properties from objects like this:<br>				
+
+delete ourDog.bark;<br>				
+
+Instructions<br>				
+Delete the "tails" property from myDog. You may use either dot or bracket notation.	<br>				
+</p>
+<hr>
+<p>
+<h2>Using Objects for Lookups </h2>
+Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.<br>				
+
+Here is an example of a simple reverse alphabet lookup:<br>				
+
+<pre>
+var alpha = {
+  1:"Z",
+  2:"Y",
+  3:"X",
+  4:"W",
+  ...
+  24:"C",
+  25:"B",
+  26:"A"
+};
+alpha[2]; // "Y"
+alpha[24]; // "C"
+
+var value = 2;
+alpha[value]; // "Y"	
+</pre>
+Instructions<br>				
+Convert the switch statement into a lookup table called lookup. Use it to lookup val and assign the associated string to the result variable.	<br>				
+</p>
+<hr>
+<p>
+<h2>Testing Objects for Properties </h2>
+Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.<br>				
+
+Example<br>				
+
+<pre>
+var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // true
+myObj.hasOwnProperty("middle"); // false	
+</pre>
+Instructions<br>				
+Modify the function checkObj to test myObj for checkProp. If the property is found, return that property's value. If not, return "Not Found".<br>				
+</p>
+<hr>
+<p>
+<h2>Manipulating Complex Objects </h2>
+Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.<br>				
+
+Here's an example of a complex data structure:<br>				
+
+<pre>
+var ourMusic = [
+  {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [ 
+      "CD", 
+      "Cassette", 
+      "LP" ],
+    "gold": true
+  }
+];	
+</pre>
+This is an array which contains one object inside. The object has various pieces of metadata about an album. It also has a nested "formats" array. If you want to add more album records, you can do this by adding records to the top level array.<br>				
+
+Objects hold data in a property, which has a key-value format. In the example above, "artist": "Daft Punk" is a property that has a key of "artist" and a value of "Daft Punk".<br>				
+
+JavaScript Object Notation or JSON is a related data interchange format used to store data.<br>				
+
+<pre>
+{
+  "artist": "Daft Punk",
+  "title": "Homework",
+  "release_year": 1997,
+  "formats": [ 
+    "CD",
+    "Cassette",
+    "LP"
+  ],
+  "gold": true
+}	
+</pre>
+Note<br>				
+You will need to place a comma after every object in the array, unless it is the last object in the array.<br>				
+
+Instructions<br>				
+Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats array of strings.	<br>				
+</p>
+<hr>
+<p>
+<h2>Accessing Nested Objects </h2>
+The sub-properties of objects can be accessed by chaining together the dot or bracket notation.<br>				
+
+Here is a nested object:<br>				
+
+<pre>
+var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage.cabinet["top drawer"].folder2;  // "secrets"
+ourStorage.desk.drawer; // "stapler"	
+</pre>
+Instructions<br>				
+Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use bracket notation for properties with a space in their name.	<br>				
+</p>
+<hr>
+<p>
+<h2>Accessing Nested Arrays </h2>
+As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.<br>				
+
+Here is an example of how to access a nested array:<br>				
+
+<pre>
+var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+];
+ourPets[0].names[1]; // "Fluffy"
+ourPets[1].names[0]; // "Spot"	
+</pre>
+Instructions<br>				
+Retrieve the second tree from the variable myPlants using object dot and array bracket notation.	<br>				
+</p>
+<hr>
+<p>
+<h2>Iterate with JavaScript For Loops </h2>
+You can run the same code multiple times by using a loop.<br>				
+
+The most common type of JavaScript loop is called a "for loop" because it runs "for" a specific number of times.<br>				
+
+For loops are declared with three optional expressions separated by semicolons:<br>				
+
+for ([initialization]; [condition]; [final-expression])<br>				
+
+The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.<br>				
+
+The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When condition is false at the start of the iteration, the loop will stop executing. This means if condition starts as false, your loop will never execute.<br>				
+
+The final-expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter.<br>				
+
+In the following example we initialize with i = 0 and iterate while our condition i < 5 is true. We'll increment i by 1 in each loop iteration with i++ as our final-expression.<br>				
+
+<pre>
+var ourArray = [];
+for (var i = 0; i < 5; i++) {
+  ourArray.push(i);
+}	
+</pre>
+ourArray will now contain [0,1,2,3,4].<br>				
+
+Instructions<br>				
+Use a for loop to work to push the values 1 through 5 onto myArray.	<br>				
+</p>
+<hr>
+<p>
+<h2>Iterate Odd Numbers With a For Loop </h2>
+For loops don't have to iterate one at a time. By changing our final-expression, we can count by even numbers.<br>				
+
+We'll start at i = 0 and loop while i < 10. We'll increment i by 2 each loop with i += 2.<br>				
+
+<pre>
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}	
+</pre>
+ourArray will now contain [0,2,4,6,8].<br>				
+
+Let's change our initialization so we can count by odd numbers.<br>				
+
+Instructions<br>				
+Push the odd numbers from 1 through 9 to myArray using a for loop.	<br>				
+</p>
+<hr>
+<p>
+<h2>Count Backwards With a For Loop </h2>
+A for loop can also count backwards, so long as we can define the right conditions.<br>				
+
+In order to count backwards by twos, we'll need to change our initialization, condition, and final-expression.<br>				
+
+We'll start at i = 10 and loop while i > 0. We'll decrement i by 2 each loop with i -= 2. <br>				
+
+<pre>
+var ourArray = [];
+for (var i=10; i > 0; i-=2) {
+  ourArray.push(i);
+}	
+</pre>
+ourArray will now contain [10,8,6,4,2].<br>				
+
+Let's change our initialization and final-expression so we can count backward by twos by odd numbers.<br>				
+
+Instructions<br>				
+Push the odd numbers from 9 through 1 to myArray using a for loop.	<br>				
+</p>
+<hr>
+<p>
+<h2>Iterate Through an Array with a For Loop </h2>
+A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console:<br>				
+
+<pre>
+var arr = [10,9,8,7,6];
+for (var i=0; i < arr.length; i++) {
+   console.log(arr[i]);
+}	
+</pre>
+Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our condition for this loop is i < arr.length, which stops when i is at length - 1.<br>				
+
+Instructions<br>				
+Declare and initialize a variable total to 0. Use a for loop to add the value of each element of the myArr array to total.	<br>				
+</p>
+<hr>
+<p>
+<h2>Nesting For Loops </h2>
+If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:<br>				
+
+<pre>
+var arr = [
+  [1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}	
+</pre>
+This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.<br>				
+
+Instructions<br>				
+Modify function multiplyAll so that it multiplies the product variable by each number in the sub-arrays of arr<br>					
+</p>
+<hr>
+<p>
+	<h2>Iterate with JavaScript While Loops </h2>
+You can run the same code multiple times by using a loop.<br>				
+
+Another type of JavaScript loop is called a "while loop", because it runs "while" a specified condition is true and stops once that condition is no longer true.<br>				
+
+<pre>
+var ourArray = [];
+var i = 0;
+while(i < 5) {
+  ourArray.push(i);
+  i++;
+}	
+</pre>
+Let's try getting a while loop to work by pushing values to an array.<br>				
+
+Instructions<br>				
+Push the numbers 0 through 4 to myArray using a while loop.<br>				
+</p>
+<hr>
+<p>
+<h2>Profile Lookup </h2>
+We have an array of objects representing different people in our contacts lists.<br>				
+
+A lookUpProfile function that takes firstName and a property (prop) as arguments has been pre-written for you.<br>				
+
+The function should check if firstName is an actual contact's firstName and the given property (prop) is a property of that contact.<br>				
+
+If both are true, then return the "value" of that property.<br>				
+
+If firstName does not correspond to any contacts then return "No such contact"<br>				
+
+If prop does not correspond to any valid properties then return "No such property"	<br>				
+</p>
+<hr>
+<p>
+<h2>Generate Random Fractions with JavaScript </h2>
+Random numbers are useful for creating random behavior.<br>				
+
+JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive). Thus Math.random() can return a 0 but never quite return a 1<br>				
+
+Note<br>				
+Like Storing Values with the Equal Operator, all function calls will be resolved before the return executes, so we can return the value of the Math.random() function.<br>				
+
+Instructions<br>				
+Change randomFraction to return a random number instead of returning 0.<br>				
+</p>
+<hr>
+<p>
+<h2>Generate Random Whole Numbers with JavaScript </h2>
+It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.<br>				
+
+Use Math.random() to generate a random decimal.<br>				
+Multiply that random decimal by 20.<br>				
+Use another function, Math.floor() to round the number down to its nearest whole number.<br>				
+Remember that Math.random() can never quite return a 1 and, because we're rounding down, it's impossible to actually get 20. This technique will give us a whole number between 0 and 19.<br>				
+
+Putting everything together, this is what our code looks like:<br>				
+
+Math.floor(Math.random() * 20);<br>				
+
+We are calling Math.random(), multiplying the result by 20, then passing the value to Math.floor() function to round the value down to the nearest whole number.<br>				
+
+Instructions<br>				
+Use this technique to generate and return a random whole number between 0 and 9.	<br>				
+</p>
+<hr>
+<p>
+<h2>Generate Random Whole Numbers within a Range </h2>
+Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.<br>				
+
+To do this, we'll define a minimum number min and a maximum number max.<br>				
+
+Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:<br>				
+
+Math.floor(Math.random() * (max - min + 1)) + min<br>				
+
+Instructions<br>				
+Create a function called randomRange that takes a range myMin and myMax and returns a random number that's greater than or equal to myMin, and is less than or equal to myMax, inclusive.<br>				
+</p>
+<hr>
+<p>
+<h2>Sift through Text with Regular Expressions </h2>
+Regular expressions are used to find certain words or patterns inside of strings.<br>				
+
+For example, if we wanted to find the word the in the string The dog chased the cat, we could use the following regular expression: /the/gi<br>				
+
+Let's break this down a bit:<br>				
+
+/ is the start of the regular expression.<br>				
+
+the is the pattern we want to match.<br>				
+
+/ is the end of the regular expression.<br>				
+
+g means global, which causes the pattern to return all matches in the string, not just the first one.<br>				
+
+i means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.<br>				
+
+Instructions<br>				
+Select all the occurrences of the word and in testString.<br>				
+
+You can do this by replacing the . part of the regular expression with the word and.	<br>				
+</p>
+<hr>
+<p>
+<h2>Find Numbers with Regular Expressions </h2>
+We can use special selectors in Regular Expressions to select a particular type of value.<br>				
+
+One such selector is the digit selector \d which is used to retrieve one digit (e.g. numbers 0 to 9) in a string.<br>				
+
+In JavaScript, it is used like this: /\d/g.<br>				
+
+Appending a plus sign (+) after the selector, e.g. /\d+/g, allows this regular expression to match one or more digits.<br>				
+
+The trailing g is short for 'global', which allows this regular expression to find all matches rather than stop at the first match.<br>				
+
+Instructions<br>				
+Use the \d selector to select the number of numbers in the string, allowing for the possibility of one or more digit.	<br>				
+</p>
+<hr>
+<p>
+<h2>Find Whitespace with Regular Expressions </h2>
+We can also use regular expression selectors like \s to find whitespace in a string.<br>				
+
+The whitespace characters are " " (space), \r (the carriage return), \n (newline), \t (tab), and \f (the form feed).<br>				
+
+The whitespace regular expression looks like this:<br>				
+
+/\s+/g<br>				
+
+Instructions<br>				
+Use \s to select all the whitespace characters in the sentence string.<br>				
+</p>
+<hr>
+<p>
+<h2>Invert Regular Expression Matches with JavaScript </h2>
+You can invert any match by using the uppercase version of the regular expression selector.<br>				
+
+For example, \s will match any whitespace, and \S will match anything that isn't whitespace.<br>				
+
+Instructions<br>				
+Use /\S/g to count the number of non-whitespace characters in testString.	<br>				
+</p>
+</div>
 	</div>
+	<a href="#top" id="backToTop">Back to Top</a>
+	<script src="script.js"></script>
 </body>
 </html>
