@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Free Code Camp</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="container group">
+		<nav id="top">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="javascript.html">Javascript</a></li>
+				<li><a href="jquery.html">jQuery</a></li>
+				<li><a href="blackjack.html">Blackjack</a></li>				
+				<li><a href="ooAndfunPro.html">ObjectOrientedandFunctional</a></li>				
+			</ul>
+		</nav>			
+		<h1>Object Oriented and Functional Programming</h1>		
+<div id="sidebar">
+	<h3>Menu</h3>
+	<div>
+		<ul id="sideMenu">
+
+		</ul>
+	</div>
+</div>
+<div id="mainContent">
+		<p>
+<h2>Declare JavaScript Objects as Variables </h2>
+Before we dive into Object Oriented Programming, let's revisit JavaScript objects. <br>
+
+Give your motorBike object a wheels, engines and seats attribute and set them to numbers. <br>
+<pre>
+
+var car = {
+  "wheels":4,
+  "engines":1,
+  "seats":5
+};
+
+var motorBike = {
+
+  // Only change code below this line.
+
+};
+	
+</pre>
+<hr>
+</p>
+<p>
+<h2>Construct JavaScript Objects with Functions </h2>
+We are also able to create objects using constructor functions.<br>
+
+A constructor function is given a capitalized name to make it clear that it is a constructor.<br>
+
+Here's an example of a constructor function:<br>
+
+<pre>
+var Car = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 5;
+};	
+</pre>
+In a constructor the this variable refers to the new object being created by the constructor. So when we write,<br>
+
+  this.wheels = 4;<br>
+
+inside of the constructor we are giving the new object it creates a property called wheels with a value of 4.<br>
+
+You can think of a constructor as a description for the object it will create.<br>
+
+Have your MotorBike constructor describe an object with wheels, engines and seats properties and set them to numbers.	<br>
+</p>
+<hr>
+<p>
+<h2>Make Instances of Objects with a Constructor Function </h2>
+Now let's put that great constructor function we made in the last lesson to use!<br>
+
+To use a constructor function we call it with the new keyword in front of it like:<br>
+
+var myCar = new Car();
+<br>
+myCar is now an instance of the Car constructor that looks like the object it described:<br>
+
+<pre>
+{
+  wheels: 4,
+  engines: 1,
+  seats: 5
+}	
+</pre>
+Note that it is important to use the new keyword when calling a constructor. This is how Javascript knows to create a new object and that all the references to this inside the constructor should be referring to this new object.<br>
+
+Now, once the myCar instance is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:<br>
+
+myCar.turboType = "twin";<br>
+
+Our myCar variable now has a property turboType with a value of "twin".
+<br>
+In the editor, use the Car constructor to create a new instance and assign it to myCar.<br>
+
+Then give myCar a nickname property with a string value.<br>	
+</p>
+<hr>
+<p>
+<h2>Make Unique Objects by Passing Parameters to our Constructor </h2>
+The constructor we have is great, but what if we don't always want to create the same object?<br>
+
+To solve this we can add parameters to our constructor. We do this like the following example:<br>
+
+<pre>
+var Car = function(wheels, seats, engines) {
+  this.wheels = wheels;
+  this.seats = seats;
+  this.engines = engines;
+};	
+</pre>
+Now we can pass in arguments when we call our constructor.<br>
+
+var myCar = new Car(6, 3, 1);<br>
+
+This code will create an object that uses the arguments we passed in and looks like:<br>
+
+<pre>
+{
+  wheels: 6,
+  seats: 3,
+  engines: 1
+}	
+</pre>
+Now give it a try yourself! Alter the Car constructor to use parameters to assign values to the wheels, seats, and engines properties.<br>
+
+Then call your new constructor with three number arguments and assign it to myCar to see it in action.	<br>
+</p>
+<hr>
+<p>
+<h2>Make Object Properties Private </h2>
+Objects have their own attributes, called properties, and their own functions, called methods.<br>
+
+In the previous challenges, we used the this keyword to reference public properties of the current object.<br>
+
+We can also create private properties and private methods, which aren't accessible from outside the object.<br>
+
+To do this, we create the variable inside the constructor using the var keyword we're familiar with, instead of creating it as a property of this.<br>
+
+This is useful for when we need to store information about an object but we want to control how it is used by outside code.<br>
+
+For example, what if we want to store the speed our car is traveling at but we only want outside code to be able to modify it by accelerating or decelerating, so the speed changes in a controlled way?<br>
+
+In the editor you can see an example of a Car constructor that implements this pattern.<br>
+
+Now try it yourself! Modify the Bike constructor to have a private property called gear and two public methods called getGear and setGear to get and set that value.<br>
+
+Further explanation on 'this' keyword	<br>
+<pre>
+
+var Car = function() {
+  // this is a private variable
+  var speed = 10;
+
+  // these are public methods
+  this.accelerate = function(change) {
+    speed += change;
+  };
+
+  this.decelerate = function() {
+    speed -= 5;
+  };
+
+  this.getSpeed = function() {
+    return speed;
+  };
+};
+
+var Bike = function() {
+
+  // Only change code below this line.
+
+};
+
+var myCar = new Car();
+
+var myBike = new Bike();
+	
+</pre>
+</p>
+<hr>
+<p>
+<h2>Iterate over Arrays with map </h2>
+The map method is a convenient way to iterate through arrays. Here's an example usage:<br>
+
+<pre>
+var oldArray = [1, 2, 3];
+var timesFour = oldArray.map(function(val){
+  return val * 4;
+});
+console.log(timesFour); // returns [4, 8, 12]
+console.log(oldArray);  // returns [1, 2, 3]	
+</pre>
+The map method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it. Note that it does not modify the original array.<br>
+
+In our example the callback only uses the value of the array element (the val argument) but your callback can also include arguments for the index and array being acted on.<br>
+
+Use the map function to add 3 to every value in the variable oldArray, and save the results into variable newArray. oldArray should not change.	<br>
+</p>
+<hr>
+<p>
+<h2>Condense arrays with reduce </h2>
+The array method reduce is used to iterate through an array and condense it into one value.<br>
+
+To use reduce you pass in a callback whose arguments are an accumulator (in this case, previousVal) and the current value (currentVal).<br>
+
+The accumulator is like a total that reduce keeps track of after each operation. The current value is just the next element in the array you're iterating through.<br>
+
+reduce has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and currentVal will start with the second array element.<br>
+
+Here is an example of reduce being used to subtract all the values of an array:<br>
+
+<pre>
+var singleVal = array.reduce(function(previousVal, currentVal) {
+  return previousVal - currentVal;
+}, 0);	
+</pre>
+Use the reduce method to sum all the values in array and assign it to singleVal.	<br>
+</p>
+<hr>
+<p>
+<h2>Filter Arrays with filter </h2>
+The filter method is used to iterate through an array and filter out elements where a given condition is not true.<br>
+
+filter is passed a callback function which takes the current value (we've called that val) as an argument.<br>
+
+Any array element for which the callback returns true will be kept and elements that return false will be filtered out.<br>
+
+The following code is an example of using filter to remove array elements that are equal to five:<br>
+
+Note: We omit the second and third arguments since we only need the value<br>
+
+<pre>
+array = array.filter(function(val) {
+  return val !== 5;
+});	
+</pre>
+Use filter to create a new array with all the values from oldArray which are less than 6. The oldArray should not change.	<br>
+</p>
+<hr>
+<p>
+<h2>Sort Arrays with sort </h2>
+You can use the method sort to easily sort the values in an array alphabetically or numerically.<br>
+
+Unlike the previous array methods we have been looking at, sort actually alters the array in place. However, it also returns this sorted array.<br>
+
+sort can be passed a compare function as a callback. The compare function should return a negative number if a should be before b, a positive number if a should be after b, or 0 if they are equal.<br>
+
+If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.<br>
+
+Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:<br>
+
+<pre>
+var array = [1, 12, 21, 2];
+array.sort(function(a, b) {
+  return a - b;
+});	
+</pre>
+Use sort to sort array from largest to smallest.<br>
+
+Further explanation on the .sort() method can be found here.	<br>
+</p>
+<hr>
+<p>
+<h2>Reverse Arrays with reverse </h2>
+You can use the reverse method to reverse the elements of an array.<br>
+
+reverse is another array method that alters the array in place, but it also returns the reversed array.<br>
+
+<pre>
+var myArray = [1, 2, 3];
+myArray.reverse();	
+</pre>
+returns [3, 2, 1]<br>
+
+Use reverse to reverse the array variable and assign it to newArray.	<br>
+</p>
+<hr>
+<p>
+<h2>Concatenate Arrays with concat </h2>
+concat can be used to merge the contents of two arrays into one.<br>
+
+concat takes an array as an argument and returns a new array with the elements of this array concatenated onto the end.<br>
+
+Here is an example of concat being used to concatenate otherArray onto the end of oldArray:<br>
+
+newArray = oldArray.concat(otherArray);<br>
+
+Use .concat() to concatenate concatMe onto the end of oldArray and assign it to newArray.	<br>
+</p>
+<hr>
+<p>
+<h2>Split Strings with split </h2>
+You can use the split method to split a string into an array.<br>
+
+split uses the argument you pass in as a delimiter to determine which points the string should be split at.<br>
+
+Here is an example of split being used to split a string at every s character:<br>
+
+var array = string.split('s');<br>
+
+Use split to create an array of words from string and assign it to array.	<br>
+</p>
+<hr>
+<p>
+<h2>Join Strings with join </h2>
+We can use the join method to join each element of an array into a string separated by whatever delimiter you provide as an argument.<br>
+
+The following is an example of using join to join all of the elements of an array into a string with all the elements separated by word and:<br>
+
+<pre>
+var veggies = ["Celery", "Radish", "Carrot", "Potato"];
+var salad = veggies.join(" and ");
+console.log(salad); // "Celery and Radish and Carrot and Potato" 	
+</pre>
+Use the join method to create a string from joinMe with spaces in between each element and assign it to joinedString.	<br>
+</p>
+
+	<a href="#top" id="backToTop">Back to Top</a>
+	<script src="script.js"></script>
+</body>
+</html>
+
