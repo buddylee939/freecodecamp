@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free CodeCamp</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+    #quoteMe {
+      margin-bottom: 100px;
+    }
+    textarea, button {
+      width: 100%;
+      font-size: 16px;
+    }
+    button {
+      display: block;
+      /* height: 60px; */
+      background: blue;
+      color: white;
+      border: 2px solid black;
+      border-radius: 10px;
+      font-size: 2em;
+      padding: 20px;
+    }
+    li {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FreeCodeCamp Javascript Route</h1>
+    <p id="demo"></p>
+    <hr>
+    <h2>Enter The Text of Any Book</h2>
+    <textarea rows="20" name="comment"  id="bookText">
+    </textarea> <br>
+    <button onclick="quoteMe()">Quote Me</button> <br>
+    <div>
+      <ol id="output">
+        
+      </ol>
+    </div>
+    <p class="joined"></p>
+    
+    <script src="freeCodeCamp.js"></script>
+    <!-- <script src="bookquotes.js"></script> -->
+  </div>
+</body>
+</html>
+
